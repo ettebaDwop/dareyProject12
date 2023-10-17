@@ -23,16 +23,23 @@ Go to Jenkins web console -> Manage Jenkins -> Manage Plugins -> on Available ta
 ![image](https://github.com/ettebaDwop/dareyProject12/assets/7973831/22948a02-6f57-4a8c-a769-81cef4cbe9cd)
 
 4. Create a new Freestyle project (you have done it in Project 9) and name it save_artifacts.
-5.This project will be triggered by completion of your existing ansible project. Configure it accordingly:       
+5.This project will be triggered by completion of your existing ansible project. Configure it accordingly:
+
+![image](https://github.com/ettebaDwop/dareyProject12/assets/7973831/84b13d71-363c-4227-b220-202937b09755)
+      
+![image](https://github.com/ettebaDwop/dareyProject12/assets/7973831/3c094cd2-6359-492c-bfae-c710446cf0f3)
 
 Note: You can configure number of builds to keep in order to save space on the server, for example, you might want to keep only last 2 or 5 build results. You can also make this change to your ansible job.
 
 The main idea of save_artifacts project is to save artifacts into /home/ubuntu/ansible-config-artifact directory. To achieve this, create a Build step and choose Copy artifacts from other project, specify ansible as a source project and /home/ubuntu/ansible-config-artifact as a target directory.
 
+![image](https://github.com/ettebaDwop/dareyProject12/assets/7973831/4bc79e11-7969-4714-a3db-09eba3fa4332)
+
 Test your set up by making some change in README.MD file inside your ansible-config-mgt repository (right inside master branch).
+
+
 If both Jenkins jobs have completed one after another – you shall see your files inside /home/ubuntu/ansible-config-artifact directory and it will be updated with every commit to your master branch.
 
-Now your Jenkins pipeline is more neat and clean.
 
 ## REFACTOR ANSIBLE CODE BY IMPORTING OTHER PLAYBOOKS INTO SITE.YML
 ### Step 2 – Refactor Ansible code by importing other playbooks into site.yml
