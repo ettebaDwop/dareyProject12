@@ -263,7 +263,9 @@ or
 
 http://<Web1-UAT-Server-Public-IP-or-Public-DNS-Name>/index.php
 
-Your Ansible architecture now looks like this:
+Our Ansible architecture now looks like this:
+
+
 
 
 
