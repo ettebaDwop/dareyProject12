@@ -87,7 +87,7 @@ Your folder structure should look like this;
 ![image](https://github.com/ettebaDwop/dareyProject12/assets/7973831/dbd605bb-b4fb-469e-ad7c-7ed3c291c1b2)
 
 5. Run ansible-playbook command against the dev environment
-Since you need to apply some tasks to your dev servers and wireshark is already installed – you can go ahead and create another playbook under static-assignments and name it common-del.yml. In this playbook, configure deletion of wireshark utility.
+Since you need to apply some tasks to your dev servers and wireshark is already installed – you can go ahead and create another playbook under static-assignments and name it *common-del.yml*. In this playbook, configure deletion of wireshark utility.
 
 ```
 ---
@@ -117,16 +117,20 @@ Since you need to apply some tasks to your dev servers and wireshark is already 
       autoclean: yes
 ```
 
-update site.yml with - import_playbook: ../static-assignments/common-del.yml instead of common.yml and run it against dev servers:
+update *site.yml* with  `- import_playbook: ../static-assignments/common-del.yml`  instead of *common.yml* and run it against dev servers:
 
-```cd /home/ubuntu/ansible-config-mgt/
+```
+cd /home/ubuntu/ansible-config-mgt/
 
 ansible-playbook -i inventory/dev.yml playbooks/site.yaml
 ```
+![image](https://github.com/ettebaDwop/dareyProject12/assets/7973831/7049733f-e254-4490-897b-354bfecf9cba)
 
-Make sure that wireshark is deleted on all the servers by running wireshark --version
+Make sure that wireshark is deleted on all the servers by running `wireshark --version`
 
-Now you have learned how to use import_playbooks module and you have a ready solution to install/delete packages on multiple servers with just one command.
+![image](https://github.com/ettebaDwop/dareyProject12/assets/7973831/9326fca5-46c7-4842-a9a5-4d7fc75c6c45)
+
+* Here we have used the  *import_playbooks* module(a ready solution) to install/delete packages on multiple servers with just one command.
 
 ## CONFIGURE UAT WEBSERVERS WITH A ROLE ‘WEBSERVER’
 ### Step 3 – Configure UAT Webservers with a role ‘Webserver’
